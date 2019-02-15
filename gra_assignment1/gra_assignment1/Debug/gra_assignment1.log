@@ -1,0 +1,13 @@
+﻿  MyScene.cpp
+  MySphere.cpp
+c:\users\user\onedrive\g53\gra coursework\gra_assignment1\gra_assignment1\mysphere.cpp(162): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\user\onedrive\g53\gra coursework\gra_assignment1\gra_assignment1\mysphere.cpp(163): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\user\onedrive\g53\gra coursework\gra_assignment1\gra_assignment1\mysphere.cpp(164): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\user\onedrive\g53\gra coursework\gra_assignment1\gra_assignment1\mysphere.cpp(168): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\user\onedrive\g53\gra coursework\gra_assignment1\gra_assignment1\mysphere.cpp(169): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\user\onedrive\g53\gra coursework\gra_assignment1\gra_assignment1\mysphere.cpp(170): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\user\onedrive\g53\gra coursework\gra_assignment1\gra_assignment1\mysphere.cpp(174): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\user\onedrive\g53\gra coursework\gra_assignment1\gra_assignment1\mysphere.cpp(175): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\user\onedrive\g53\gra coursework\gra_assignment1\gra_assignment1\mysphere.cpp(176): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+  Generating Code...
+  gra_assignment1.vcxproj -> C:\Users\User\OneDrive\G53\GRA Coursework\gra_assignment1\Debug\gra_assignment1.exe
