@@ -30,7 +30,7 @@ void MyScene::Initialise()
 	Cube *cube = new Cube(this);
 	AddObject(cube);
 
-	/*
+	
 	xInput = new XInputController(1);
 	
 	std::cout << "Instructions:\n";
@@ -39,7 +39,7 @@ void MyScene::Initialise()
 	std::cout << "[X] Vibrate Both\n";
 	std::cout << "[Y] Vibrate Neither\n";
 	std::cout << "[BACK] Exit\n";
-	*/
+	
 
 }
 
@@ -56,21 +56,49 @@ void MyScene::Projection()
 }
 
 void MyScene::Update(const double& deltaTime)
-{
-	/*if (xInput->IsConnected()) {
-		switch (xInput->GetState().Gamepad.wButtons) {
-		case XINPUT_GAMEPAD_A: 
-			xInput->Vibrate(65535, 0);
-		}
+{	
+	state = xInput->GetState();
+	SHORT threshold = 1000;
+
+	if (xInput->IsConnected()) {
+		if (state.Gamepad.wButtons & XINPUT_GAMEPAD_A) xInput->Vibrate(65535, 0);
+		if (state.Gamepad.wButtons & XINPUT_GAMEPAD_B) xInput->Vibrate(0, 65535);
+		if (state.Gamepad.wButtons & XINPUT_GAMEPAD_X) xInput->Vibrate(65535, 65535);
+		if (state.Gamepad.wButtons & XINPUT_GAMEPAD_Y) xInput->Vibrate();
+		if (state.Gamepad.wButtons & XINPUT_GAMEPAD_BACK) {	}
+
+		lx = state.Gamepad.sThumbLX;
+		ly = state.Gamepad.sThumbLY;
+		rx = state.Gamepad.sThumbRX;
+		ry = state.Gamepad.sThumbRY;
+
+		if (lx < threshold && lx > -threshold) lx = 0;
+		if (lx > -threshold && lx < threshold) lx = 0;
+		if (ly < threshold && ly > -threshold) ly = 0;
+		if (ly > -threshold && ly < threshold) ly = 0;
+
+		if (rx < threshold && rx > -threshold) rx = 0;
+		if (rx > -threshold && rx < threshold) rx = 0;
+		if (ry < threshold && ry > -threshold) ry = 0;
+		if (ry > -threshold && ry < threshold) ry = 0;
+
+		int div = 256;
+		lx /= div;
+		ly /= div;
+		rx /= div;
+		ry /= div;
+
+		if (abs(lx + ly + rx + ry) > 10) cout << lx << " " << ly << " " << rx << " " << ry << endl;
 	}
 	else {
 		cout << "xinput not found" << endl;
 	}
-	*/
+	
 
 	WorldObject *tempObj;
 	vector<WorldObject*> *tempList;
 
+	// Go through each WorldObject looking for requests to add new objects to the scene
 	for (size_t i = 0; i < objectsList->size(); ++i) {
 		tempObj = objectsList->at(i);
 		tempList = tempObj->newObjs;

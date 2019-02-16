@@ -181,6 +181,11 @@ void Cube::Update(const double& deltaTime) {
 	float velocity = 100.0f*static_cast<float>(deltaTime);
 	float shrinkRate = -50.0f*static_cast<float>(deltaTime);
 
+
+	// test for xinput controlled rotation
+	rotation[1] += scene->lx / 16.f;
+	rotation[0] -= scene->ly / 16.f;
+
 	// Spacebar will reset transformation values
 	if (_flagReset)
 	{

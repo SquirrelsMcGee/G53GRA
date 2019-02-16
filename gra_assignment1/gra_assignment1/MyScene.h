@@ -2,7 +2,7 @@
 
 #include <vector>
 #include "Functions.h"
-//#include "XInputController.h"
+#include "XInputController.h"
 
 #ifndef ___MyScene__
 #define ___MyScene__
@@ -31,7 +31,10 @@ public:
 	void AddObject(WorldObject *obj);
 
 	Cube *cube;
-	//XInputController *xInput;
+	
+	XInputController *xInput;
+	XINPUT_STATE state;
+	SHORT lx, ly, rx, ry;
 
 	void Update(const double& deltaTime);
 	Tetrahedron *tetra;
