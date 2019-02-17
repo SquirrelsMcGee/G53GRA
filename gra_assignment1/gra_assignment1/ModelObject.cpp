@@ -1,206 +1,114 @@
-#include "Cube.h"
+#include "ModelObject.h"
 
-Cube::Cube(MyScene *scene) : WorldObject(scene, 0, "test", 0), 
+
+
+ModelObject::ModelObject(MyScene *scene, string filePath) : WorldObject(scene, 0, "test", 0),
 	scene(scene), _flagAutospin(false),
 	_flagReset(false), _iKey(false), _jKey(false), _kKey(false),
 	_lKey(false), _oKey(false), _uKey(false), _plusKey(false), _minusKey(false),
 	_upKey(false), _downKey(false), _leftKey(false), _rightKey(false)
 {
-	size(_INIT_SIZE);
-	CreatePolygons();
+	_path = filePath;
 
-	pos[0] = 0.0f;
-	pos[2] = _DEF_Z;
+
+	objectFileReader	= new ObjectFileReader(_path);
+	objectFileReader->Load();
+
+	vertices			= objectFileReader->vertices;
+	normals				= objectFileReader->normals;
+	textureCoordinates	= objectFileReader->textureCoordinates;
+	faces				= objectFileReader->faces;
+	faceMaterials		= objectFileReader->faceMaterials;
 }
 
 
-Cube::~Cube()
+ModelObject::~ModelObject()
 {
 }
 
-void Cube::Display() {
-	// Push the current transformation matrix.
-	// for now just put it at the start and end of each draw call you make
+void ModelObject::Display() {
 	glPushMatrix();
-
-	// Disable default lighting effects (IGNORE THIS)
 	glDisable(GL_LIGHTING);
-
-	// Translate object into its position first
-
+	
 	glTranslatef(pos[0], pos[1], pos[2]);
+	glScalef(scale[0] * 1, scale[1] * 1, scale[2] * 1);
 
-	// Scale object (but not translation) by calling scale after translate
-	glScalef(scale[0], scale[1], scale[2]);
-
-	// Rotate object in new position, in order y>z>x axes
 	glRotatef(rotation[1], 0.0f, 1.0f, 0.0f); // angle ry about (0,1,0)
 	glRotatef(rotation[2], 0.0f, 0.0f, 1.0f); // angle rz about (0,0,1)
 	glRotatef(rotation[0], 1.0f, 0.0f, 0.0f); // angle rx about (1,0,0)
 
-	// Local function to draw coloured cube
-	DrawAllTriangles();
+	Render();
 
-	// Reenable default lighting (IGNORE THIS)
 	glEnable(GL_LIGHTING);
-	// Revert changes between most recent glPushMatrix and here
 	glPopMatrix();
 }
 
+void ModelObject::Render() {
+	//glEnable(GL_TEXTURE_2D);
+	//glEnable(GL_COLOR_MATERIAL);
 
-void Cube::DrawAllTriangles() {
-	float r, g, b, x, y, z;
+	//glBindTexture(GL_TEXTURE_2D, textureId);
+	glColor4f(1.f, 1.f, 1.f, 1.f);
+
+	glBegin(GL_TRIANGLES);
+
+	//bool alreadyRendered = false;
+	for (size_t faceId = 0; faceId < faces.size(); faceId++) {
+		RenderFace(faces[faceId]);
+	}
+
+	glEnd();
+	
+}
+
+void ModelObject::RenderFace(int ** face) {
+	float r, g, b, x, y ,z;
 	float min = -10.0;
 	float max = 10.0;
-	glBegin(GL_TRIANGLES);
-	for (size_t i = 0; i < polygons.size(); ++i) {
 
-		tempT = polygons[i];
-		x = tempT->v1->x;
-		y = tempT->v1->y;
-		z = tempT->v1->z;
+	for (auto vertexId = 0; vertexId < 3; vertexId++) {
+		auto vertex = face[vertexId];
+		auto vertexCoordinates = vertices[vertex[0]];
+		x = vertexCoordinates->x;
+		y = vertexCoordinates->y;
+		z = vertexCoordinates->z;
+
 		r = FloatNormalise(x, min, max);
 		g = FloatNormalise(y, min, max);
 		b = FloatNormalise(z, min, max);
 		glColor3f(r, g, b);
 		glVertex3f(x, y, z);
-
-		x = tempT->v2->x;
-		y = tempT->v2->y;
-		z = tempT->v2->z;
-		r = FloatNormalise(x, min, max);
-		g = FloatNormalise(y, min, max);
-		b = FloatNormalise(z, min, max);
-		glColor3f(r, g, b);
-		glVertex3f(x, y, z);
-
-		x = tempT->v3->x;
-		y = tempT->v3->y;
-		z = tempT->v3->z;
-		r = FloatNormalise(x, min, max);
-		g = FloatNormalise(y, min, max);
-		b = FloatNormalise(z, min, max);
-		glColor3f(r, g, b);
-		glVertex3f(x, y, z);
-
 	}
-	glEnd();
-
 }
 
-
-void Cube::CreatePolygons() {
-	float xl = -10.0;
-	float xr = 10.0;
-	float yb = xl;
-	float yt = xr;
-	float zf = xl;
-	float zn = xr;
-
-	// Front vertices
-	Vertex *ftl = new Vertex(xl, yt, zn);
-	Vertex *ftr = new Vertex(xr, yt, zn);
-	Vertex *fbl = new Vertex(xl, yb, zn);
-	Vertex *fbr = new Vertex(xr, yb, zn);
-
-	// Back vertices
-	Vertex *btl = new Vertex(xl, yt, zf);
-	Vertex *btr = new Vertex(xr, yt, zf);
-	Vertex *bbl = new Vertex(xl, yb, zf);
-	Vertex *bbr = new Vertex(xr, yb, zf);
-
-	// Front side
-	// ftr, ftl, fbl
-	Triangle *t1 = new Triangle(ftr, ftl, fbl);
-	// ftr, fbl, fbr
-	Triangle *t2 = new Triangle(ftr, fbl, fbr);
-
-	// Right side
-	// btr, ftr, fbr
-	Triangle *t3 = new Triangle(btr, ftr, fbr);
-	// btr, fbr, bbr
-	Triangle *t4 = new Triangle(btr, fbr, bbr);
-
-	// Back side
-	// btl, btr, bbl
-	Triangle *t5 = new Triangle(btl, btr, bbl);
-	// bbl, btr, bbr
-	Triangle *t6 = new Triangle(bbl, btr, bbr);
-
-	// Left side
-	// ftl, btl, fbl
-	Triangle *t7 = new Triangle(ftl, btl, fbl);
-	// fbl, btl, bbl
-	Triangle *t8 = new Triangle(fbl, btl, bbl);
-
-	// Top side
-	Triangle *t9 = new Triangle(ftr, btr, btl);
-	Triangle *t10 = new Triangle(ftr, btl, ftl);
-
-	// Bottom side
-	Triangle *t11 = new Triangle(bbr, fbr, bbl);
-	Triangle *t12 = new Triangle(bbl, fbr, fbl);
-
-	t1->setAllColor(new Vertex(1, 0, 0));
-	t2->setAllColor(new Vertex(1, 0, 0));
-
-	t3->setAllColor(new Vertex(0, 1, 0));
-	t4->setAllColor(new Vertex(0, 1, 0));
-
-	t5->setAllColor(new Vertex(0, 0, 1));
-	t6->setAllColor(new Vertex(0, 0, 1));
-
-	t7->setAllColor(new Vertex(1, 1, 0));
-	t8->setAllColor(new Vertex(1, 1, 0));
-
-	t9->setAllColor(new Vertex(0, 1, 1));
-	t10->setAllColor(new Vertex(0, 1, 1));
-
-	t11->setAllColor(new Vertex(1, 0, 1));
-	t12->setAllColor(new Vertex(1, 0, 1));
-
-
-	polygons.push_back(t1);
-	polygons.push_back(t2);
-	polygons.push_back(t3);
-	polygons.push_back(t4);
-	polygons.push_back(t5);
-	polygons.push_back(t6);
-	polygons.push_back(t7);
-	polygons.push_back(t8);
-	polygons.push_back(t9);
-	polygons.push_back(t10);
-	polygons.push_back(t11);
-	polygons.push_back(t12);
-
-
-}
-
-
-void Cube::Update(const double& deltaTime) {
+void ModelObject::Update(const double& deltaTime) {
 	float velocity = 100.0f*static_cast<float>(deltaTime);
 	float shrinkRate = -50.0f*static_cast<float>(deltaTime);
 
+	if (abs(scene->rx) > 10) rotation[1] += scene->rx / 16.f;
+	if (abs(scene->ry) > 10) rotation[0] -= scene->ry / 16.f;
 
-	// test for xinput controlled rotation
-	rotation[1] += scene->lx / 16.f;
-	rotation[0] -= scene->ly / 16.f;
+	if (abs(scene->lx) > 10) pos[0] += scene->lx / 128.0f;
+	if (abs(scene->ly) > 10) pos[2] += scene->ly / 128.0f;
 
-	if (abs(scene->rx) > 10) {
-		cout << "rx" << endl;
-		pos[0] += scene->rx;
-	}
-	if (abs(scene->ry) > 10) {
-		cout << "ry" << endl;
-		pos[1] += scene->ry;
+	if (abs(scene->lt) > 10) {
+		scale[0] += shrinkRate;
+		scale[1] += shrinkRate;
+		scale[2] += shrinkRate;
 	}
 
+	if (abs(scene->rt) > 10) {
+		scale[0] -= shrinkRate;
+		scale[1] -= shrinkRate;
+		scale[2] -= shrinkRate;
+	}
+	
 	// Spacebar will reset transformation values
 	if (_flagReset)
 	{
 		orientation(0.0f, 0.0f, 0.0f);
 		size(_INIT_SIZE);
-		position(0.0f, 0.0f, _DEF_Z);
+		position(0.0f, 0.0f, 0.0f);
 		_flagReset = false;
 	}
 
@@ -211,7 +119,7 @@ void Cube::Update(const double& deltaTime) {
 
 	rotate around x,y,z axes for (i,k), (j,l) and (u,o) respectively
 	*/
-	
+
 	if (_flagAutospin) {
 		rotation[0] -= velocity;
 		rotation[1] -= velocity;
@@ -267,7 +175,7 @@ void Cube::Update(const double& deltaTime) {
 }
 
 
-void Cube::HandleKey(unsigned char key, int state, int x, int y)
+void ModelObject::HandleKey(unsigned char key, int state, int x, int y)
 {
 	/*
 	This function is called continuously when a key is pressed AND when
@@ -319,7 +227,7 @@ void Cube::HandleKey(unsigned char key, int state, int x, int y)
 	}
 }
 
-void Cube::HandleSpecialKey(int key, int state, int x, int y)
+void ModelObject::HandleSpecialKey(int key, int state, int x, int y)
 {
 	/*
 	This function is called continuously when a special key is pressed

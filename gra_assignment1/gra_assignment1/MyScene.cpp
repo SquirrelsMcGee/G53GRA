@@ -4,7 +4,7 @@
 #include "MySphere.h"
 #include "Tetrahedron.h"
 #include "Cube.h"
-
+#include "ModelObject.h"
 
 MyScene::MyScene(int argc, char** argv, const char *title, const int& windowWidth, const int& windowHeight)
 	: Scene(argc, argv, title, windowWidth, windowHeight)
@@ -22,14 +22,16 @@ void MyScene::Initialise()
 	glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
 
 	MySphere *sphere = new MySphere(this);
-	AddObject(sphere);
+	//AddObject(sphere);
 
 	tetra = new Tetrahedron(this);
-	AddObject(tetra);
+	//AddObject(tetra);
 
 	Cube *cube = new Cube(this);
-	AddObject(cube);
-
+	//AddObject(cube);
+	string filename = "naruto.obj";
+	ModelObject *modelObject = new ModelObject(this, "Obj/" + filename);
+	AddObject(modelObject);
 	
 	xInput = new XInputController(1);
 	
@@ -57,43 +59,7 @@ void MyScene::Projection()
 
 void MyScene::Update(const double& deltaTime)
 {	
-	state = xInput->GetState();
-	SHORT threshold = 1000;
-
-	if (xInput->IsConnected()) {
-		if (state.Gamepad.wButtons & XINPUT_GAMEPAD_A) xInput->Vibrate(65535, 0);
-		if (state.Gamepad.wButtons & XINPUT_GAMEPAD_B) xInput->Vibrate(0, 65535);
-		if (state.Gamepad.wButtons & XINPUT_GAMEPAD_X) xInput->Vibrate(65535, 65535);
-		if (state.Gamepad.wButtons & XINPUT_GAMEPAD_Y) xInput->Vibrate();
-		if (state.Gamepad.wButtons & XINPUT_GAMEPAD_BACK) {	}
-
-		lx = state.Gamepad.sThumbLX;
-		ly = state.Gamepad.sThumbLY;
-		rx = state.Gamepad.sThumbRX;
-		ry = state.Gamepad.sThumbRY;
-
-		if (lx < threshold && lx > -threshold) lx = 0;
-		if (lx > -threshold && lx < threshold) lx = 0;
-		if (ly < threshold && ly > -threshold) ly = 0;
-		if (ly > -threshold && ly < threshold) ly = 0;
-
-		if (rx < threshold && rx > -threshold) rx = 0;
-		if (rx > -threshold && rx < threshold) rx = 0;
-		if (ry < threshold && ry > -threshold) ry = 0;
-		if (ry > -threshold && ry < threshold) ry = 0;
-
-		int div = 256;
-		lx /= div;
-		ly /= div;
-		rx /= div;
-		ry /= div;
-
-		if (abs(lx + ly + rx + ry) > 10) cout << lx << " " << ly << " " << rx << " " << ry << endl;
-	}
-	else {
-		cout << "xinput not found" << endl;
-	}
-	
+	XInputUpdate();
 
 	WorldObject *tempObj;
 	vector<WorldObject*> *tempList;
@@ -121,5 +87,47 @@ void checkGLError()
 		e++;
 		printf("GL Error %i: %s\n", e, gluErrorString(error)); // Display error string
 		error = glGetError();                                  // Get next glError
+	}
+}
+
+void MyScene::XInputUpdate() {
+	state = xInput->GetState();
+	SHORT threshold = 1000;
+
+	if (xInput->IsConnected()) {
+		if (state.Gamepad.wButtons & XINPUT_GAMEPAD_A) xInput->Vibrate(65535, 0);
+		if (state.Gamepad.wButtons & XINPUT_GAMEPAD_B) xInput->Vibrate(0, 65535);
+		if (state.Gamepad.wButtons & XINPUT_GAMEPAD_X) xInput->Vibrate(65535, 65535);
+		if (state.Gamepad.wButtons & XINPUT_GAMEPAD_Y) xInput->Vibrate();
+		if (state.Gamepad.wButtons & XINPUT_GAMEPAD_BACK) {}
+
+		lx = state.Gamepad.sThumbLX;
+		ly = state.Gamepad.sThumbLY;
+		rx = state.Gamepad.sThumbRX;
+		ry = state.Gamepad.sThumbRY;
+
+		lt = state.Gamepad.bLeftTrigger;
+		rt = state.Gamepad.bRightTrigger;
+
+		if (lx < threshold && lx > -threshold) lx = 0;
+		if (lx > -threshold && lx < threshold) lx = 0;
+		if (ly < threshold && ly > -threshold) ly = 0;
+		if (ly > -threshold && ly < threshold) ly = 0;
+
+		if (rx < threshold && rx > -threshold) rx = 0;
+		if (rx > -threshold && rx < threshold) rx = 0;
+		if (ry < threshold && ry > -threshold) ry = 0;
+		if (ry > -threshold && ry < threshold) ry = 0;
+
+		int div = 256;
+		lx /= div;
+		ly /= div;
+		rx /= div;
+		ry /= div;
+
+		if (abs(lx + ly + rx + ry) > 10) cout << lx << " " << ly << " " << rx << " " << ry << endl;
+	}
+	else {
+		cout << "xinput not found" << endl;
 	}
 }

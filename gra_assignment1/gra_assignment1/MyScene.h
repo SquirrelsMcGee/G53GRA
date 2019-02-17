@@ -18,6 +18,7 @@ class WorldObject;
 class MySphere;
 class Tetrahedron;
 class Cube;
+class ModelObject;
 
 using namespace std;
 
@@ -32,9 +33,11 @@ public:
 
 	Cube *cube;
 	
+	void XInputUpdate();
 	XInputController *xInput;
 	XINPUT_STATE state;
-	SHORT lx, ly, rx, ry;
+	float lx, ly, rx, ry;
+	int lt, rt;
 
 	void Update(const double& deltaTime);
 	Tetrahedron *tetra;

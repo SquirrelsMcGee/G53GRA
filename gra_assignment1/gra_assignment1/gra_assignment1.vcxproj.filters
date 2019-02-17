@@ -81,11 +81,14 @@
     <ClCompile Include="Vertex.cpp">
       <Filter>Source Files\3D Components</Filter>
     </ClCompile>
-    <ClCompile Include="ObjectFileReader.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="XInputController.cpp">
       <Filter>Source Files\XInput</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjectFileReader.cpp">
+      <Filter>Source Files\World Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="ModelObject.cpp">
+      <Filter>Source Files\World Objects</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -140,11 +143,14 @@
     <ClInclude Include="Vertex.h">
       <Filter>Header Files\3D Components</Filter>
     </ClInclude>
-    <ClInclude Include="ObjectFileReader.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="XInputController.h">
       <Filter>Header Files\XInput</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjectFileReader.h">
+      <Filter>Header Files\World Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelObject.h">
+      <Filter>Header Files\World Objects</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

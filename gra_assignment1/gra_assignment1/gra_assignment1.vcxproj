@@ -134,6 +134,7 @@
     <ClCompile Include="Framework\Utility\Texture.cpp" />
     <ClCompile Include="Functions.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="ModelObject.cpp" />
     <ClCompile Include="MyScene.cpp" />
     <ClCompile Include="MySphere.cpp" />
     <ClCompile Include="ObjectFileReader.cpp" />
@@ -155,6 +156,7 @@
     <ClInclude Include="Framework\Utility\Texture.h" />
     <ClInclude Include="Framework\Utility\VectorMath.h" />
     <ClInclude Include="Functions.h" />
+    <ClInclude Include="ModelObject.h" />
     <ClInclude Include="MyScene.h" />
     <ClInclude Include="MySphere.h" />
     <ClInclude Include="ObjectFileReader.h" />
