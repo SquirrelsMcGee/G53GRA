@@ -19,30 +19,27 @@
     <Filter Include="Header Files\Framework Header">
       <UniqueIdentifier>{7cf04748-fdc7-49d7-9dc9-6ae5e886cc32}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\World Objects">
+      <UniqueIdentifier>{3b6c3b7e-7709-4f6b-b531-43d68233952c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\World Objects">
+      <UniqueIdentifier>{270f3071-35ff-4e74-bda2-40c1cc34bff8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\3D Components">
+      <UniqueIdentifier>{daf17af6-74e8-4a54-8197-0c23bcda7c21}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\3D Components">
+      <UniqueIdentifier>{934f32cd-bb6b-446b-abc1-17074487eba9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\XInput">
+      <UniqueIdentifier>{ede6373d-2422-4b28-b092-2cba8950a325}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\XInput">
+      <UniqueIdentifier>{81a02aae-05e7-486e-84a9-050fbe5b488c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="MySphere.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="RandomPoly.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Tetrahedron.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Triangle.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Vertex.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="WorldObject.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Cube.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Functions.cpp">
@@ -63,33 +60,51 @@
     <ClCompile Include="Framework\Utility\Texture.cpp">
       <Filter>Source Files\Framework Source</Filter>
     </ClCompile>
+    <ClCompile Include="WorldObject.cpp">
+      <Filter>Source Files\World Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="Cube.cpp">
+      <Filter>Source Files\World Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="MySphere.cpp">
+      <Filter>Source Files\World Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="Tetrahedron.cpp">
+      <Filter>Source Files\World Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="RandomPoly.cpp">
+      <Filter>Source Files\World Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="Triangle.cpp">
+      <Filter>Source Files\3D Components</Filter>
+    </ClCompile>
+    <ClCompile Include="Vertex.cpp">
+      <Filter>Source Files\3D Components</Filter>
+    </ClCompile>
+    <ClCompile Include="XInputController.cpp">
+      <Filter>Source Files\XInput</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjectFileReader.cpp">
+      <Filter>Source Files\World Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="ModelObject.cpp">
+      <Filter>Source Files\World Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="Config.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Face.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="FloorTile.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Triangle.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Tetrahedron.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="RandomPoly.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="MySphere.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="MyScene.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Functions.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Cube.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="WorldObject.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Vertex.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Framework\Interface\Animation.h">
@@ -115,6 +130,45 @@
     </ClInclude>
     <ClInclude Include="Framework\Utility\VectorMath.h">
       <Filter>Header Files\Framework Header</Filter>
+    </ClInclude>
+    <ClInclude Include="Cube.h">
+      <Filter>Header Files\World Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="MySphere.h">
+      <Filter>Header Files\World Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="Tetrahedron.h">
+      <Filter>Header Files\World Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="RandomPoly.h">
+      <Filter>Header Files\World Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="WorldObject.h">
+      <Filter>Header Files\World Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="Triangle.h">
+      <Filter>Header Files\3D Components</Filter>
+    </ClInclude>
+    <ClInclude Include="Vertex.h">
+      <Filter>Header Files\3D Components</Filter>
+    </ClInclude>
+    <ClInclude Include="XInputController.h">
+      <Filter>Header Files\XInput</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjectFileReader.h">
+      <Filter>Header Files\World Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelObject.h">
+      <Filter>Header Files\World Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="Config.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Face.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="FloorTile.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

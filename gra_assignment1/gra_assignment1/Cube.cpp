@@ -16,6 +16,8 @@ Cube::Cube(MyScene *scene) : WorldObject(scene, 0, "test", 0),
 
 Cube::~Cube()
 {
+	for (size_t i = 0; i < polygons.size(); ++i)
+		delete polygons[i];
 }
 
 void Cube::Display() {
@@ -180,6 +182,20 @@ void Cube::CreatePolygons() {
 void Cube::Update(const double& deltaTime) {
 	float velocity = 100.0f*static_cast<float>(deltaTime);
 	float shrinkRate = -50.0f*static_cast<float>(deltaTime);
+
+
+	// test for xinput controlled rotation
+	rotation[1] += scene->lx / 16.f;
+	rotation[0] -= scene->ly / 16.f;
+
+	if (abs(scene->rx) > 10) {
+		cout << "rx" << endl;
+		pos[0] += scene->rx;
+	}
+	if (abs(scene->ry) > 10) {
+		cout << "ry" << endl;
+		pos[1] += scene->ry;
+	}
 
 	// Spacebar will reset transformation values
 	if (_flagReset)

@@ -55,20 +55,23 @@ void MySphere::DrawAllTriangles() {
 	Triangle *tempT;
 	Vertex *tempV;
 	Vertex *color;
-	glBegin(GL_TRIANGLES);
+	Vertex *normal;
+
 	for (size_t i = 0; i < polygons.size(); ++i) {
+		glBegin(GL_TRIANGLES);
+
 		tempT = polygons[i];
+		normal = CrossProduct(tempT->v1, tempT->v2);
+		color = Centroid3(tempT->v1, tempT->v2, tempT->v3);
 
 		tempV = tempT->v1;
 		x = tempV->x;
 		y = tempV->y;
 		z = tempV->z;
-		color = Centroid3(tempT->v1, tempT->v2, tempT->v3);
 		r = FloatNormalise(color->x, min, max);
 		g = FloatNormalise(color->y, min, max);
 		b = FloatNormalise(color->z, min, max);
 		glColor3f(r, g, b);
-		delete color;
 		glVertex3f(x, y, z);
 
 		tempV = tempT->v2;
@@ -90,9 +93,20 @@ void MySphere::DrawAllTriangles() {
 		b = FloatNormalise(z, min, max);
 		//glColor3f(r, g, b);
 		glVertex3f(x, y, z);
-		
+		glEnd();
+
+		/*
+		glBegin(GL_LINES);
+		glColor3f(1.0, 1.0, 1.0);
+		glVertex3f(2 * color->x, 2 * color->y, 2 * color->z);
+		glVertex3f(0, 0, 0);
+		glEnd();
+		*/
+
+		delete color;
+		delete normal;
 	}
-	glEnd();
+	
 }
 
 void MySphere::DrawWireframe() {
@@ -159,21 +173,21 @@ void MySphere::Subdivide(int count, Triangle *t) {
 		b = t->v2;
 		c = t->v3;
 
-		x1 = (a->x + b->x) / 2.0;
-		y1 = (a->y + b->y) / 2.0;
-		z1 = (a->z + b->z) / 2.0;
+		x1 = (a->x + b->x) / 2.0f;
+		y1 = (a->y + b->y) / 2.0f;
+		z1 = (a->z + b->z) / 2.0f;
 		magnitude = sqrt(x1*x1 + y1 * y1 + z1 * z1);
 		d = new Vertex(x1 * radius / magnitude, y1 * radius / magnitude, z1 * radius / magnitude);
 
-		x1 = (b->x + c->x) / 2.0;
-		y1 = (b->y + c->y) / 2.0;
-		z1 = (b->z + c->z) / 2.0;
+		x1 = (b->x + c->x) / 2.0f;
+		y1 = (b->y + c->y) / 2.0f;
+		z1 = (b->z + c->z) / 2.0f;
 		magnitude = sqrt(x1*x1 + y1 * y1 + z1 * z1);
 		e = new Vertex(x1 * radius / magnitude, y1 * radius / magnitude, z1 * radius / magnitude);
 		
-		x1 = (a->x + c->x) / 2.0;
-		y1 = (a->y + c->y) / 2.0;
-		z1 = (a->z + c->z) / 2.0;
+		x1 = (a->x + c->x) / 2.0f;
+		y1 = (a->y + c->y) / 2.0f;
+		z1 = (a->z + c->z) / 2.0f;
 		magnitude = sqrt(x1 * x1 + y1 * y1 + z1 * z1);
 		f = new Vertex(x1 * radius / magnitude, y1 * radius / magnitude, z1 * radius / magnitude);
 

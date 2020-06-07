@@ -2,7 +2,7 @@
 
 #include <vector>
 #include "Functions.h"
-//#include "XInputController.h"
+#include "XInputController.h"
 
 #ifndef ___MyScene__
 #define ___MyScene__
@@ -18,6 +18,7 @@ class WorldObject;
 class MySphere;
 class Tetrahedron;
 class Cube;
+class ModelObject;
 
 using namespace std;
 
@@ -31,7 +32,14 @@ public:
 	void AddObject(WorldObject *obj);
 
 	Cube *cube;
-	//XInputController *xInput;
+	
+	void XInputUpdate();
+	int xInputId = 1;
+	XInputController *xInput;
+	XINPUT_STATE state;
+	float lx, ly, rx, ry;
+	int lt, rt;
+	bool xInputEnabled = false;
 
 	void Update(const double& deltaTime);
 	Tetrahedron *tetra;
@@ -42,11 +50,3 @@ private:
 
 	vector<WorldObject*> *objectsList = new vector<WorldObject*>;
 };
-/*
-int width, height = 0;
-
-void setup();
-void draw();
-int main(int argc, char **argv);
-void checkGLError();                        // Prints any OpenGL errors to console
-*/
