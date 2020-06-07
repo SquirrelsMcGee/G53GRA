@@ -39,7 +39,7 @@ public:
 	XINPUT_STATE state;
 	float lx, ly, rx, ry;
 	int lt, rt;
-	bool xInputEnabled = false;
+	bool xInputEnabled = true;
 
 	void Update(const double& deltaTime);
 	Tetrahedron *tetra;

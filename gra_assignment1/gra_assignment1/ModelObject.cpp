@@ -52,6 +52,8 @@ void ModelObject::Display() {
 	glTranslatef(pos[0], pos[1], pos[2]);
 	glScalef(scale[0], scale[1], scale[2]);
 
+	//rotation[0] = -90.0f;
+
 	glRotatef(rotation[1], 0.0f, 1.0f, 0.0f); // angle ry about (0,1,0)
 	glRotatef(rotation[2], 0.0f, 0.0f, 1.0f); // angle rz about (0,0,1)
 	glRotatef(rotation[0], 1.0f, 0.0f, 0.0f); // angle rx about (1,0,0)

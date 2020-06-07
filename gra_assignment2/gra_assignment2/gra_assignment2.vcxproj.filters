@@ -1,0 +1,135 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Framework">
+      <UniqueIdentifier>{4d2c5624-35d4-4067-9879-491683969120}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Framework\Header">
+      <UniqueIdentifier>{754c4592-2cca-462b-9f07-2969b5d52acd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\3D Components">
+      <UniqueIdentifier>{c40bdc74-4de1-46d7-b513-dacca2e7a226}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\3D Components">
+      <UniqueIdentifier>{eca1d41e-d614-46f7-9790-9c4fa0ab5f7a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\3D Objects">
+      <UniqueIdentifier>{7652b6be-4402-4742-ac7f-c1e08a84c8d8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\3D Objects">
+      <UniqueIdentifier>{dd289cd5-2846-4cd9-9e34-4544aefbc636}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Framework\Utility\Camera.cpp">
+      <Filter>Framework</Filter>
+    </ClCompile>
+    <ClCompile Include="Framework\Engine\Engine.cpp">
+      <Filter>Framework</Filter>
+    </ClCompile>
+    <ClCompile Include="Framework\Utility\Texture.cpp">
+      <Filter>Framework</Filter>
+    </ClCompile>
+    <ClCompile Include="Framework\Engine\Scene.cpp">
+      <Filter>Framework</Filter>
+    </ClCompile>
+    <ClCompile Include="MyScene.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Quad.cpp">
+      <Filter>Source Files\3D Components</Filter>
+    </ClCompile>
+    <ClCompile Include="Triangle.cpp">
+      <Filter>Source Files\3D Components</Filter>
+    </ClCompile>
+    <ClCompile Include="Vertex.cpp">
+      <Filter>Source Files\3D Components</Filter>
+    </ClCompile>
+    <ClCompile Include="ColorRGB.cpp">
+      <Filter>Source Files\3D Components</Filter>
+    </ClCompile>
+    <ClCompile Include="WorldObject.cpp">
+      <Filter>Source Files\3D Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="SquareObject.cpp">
+      <Filter>Source Files\3D Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="RobotObject.cpp">
+      <Filter>Source Files\3D Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="WallObject.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Framework\Utility\Camera.h">
+      <Filter>Framework\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="Framework\Engine\Engine.h">
+      <Filter>Framework\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="Framework\Engine\Scene.h">
+      <Filter>Framework\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="Framework\Utility\Texture.h">
+      <Filter>Framework\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="Framework\Utility\VectorMath.h">
+      <Filter>Framework\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="Framework\Interface\Input.h">
+      <Filter>Framework\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="Framework\Interface\DisplayableObject.h">
+      <Filter>Framework\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="Framework\Interface\Animation.h">
+      <Filter>Framework\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="Quad.h">
+      <Filter>Header Files\3D Components</Filter>
+    </ClInclude>
+    <ClInclude Include="Vertex.h">
+      <Filter>Header Files\3D Components</Filter>
+    </ClInclude>
+    <ClInclude Include="Triangle.h">
+      <Filter>Header Files\3D Components</Filter>
+    </ClInclude>
+    <ClInclude Include="MyScene.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ColorRGB.h">
+      <Filter>Header Files\3D Components</Filter>
+    </ClInclude>
+    <ClInclude Include="Functions.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="WorldObject.h">
+      <Filter>Header Files\3D Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="SquareObject.h">
+      <Filter>Header Files\3D Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="RobotObject.h">
+      <Filter>Header Files\3D Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="WallObject.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

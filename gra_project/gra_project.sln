@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2035
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "gra_project", "gra_project\gra_project.vcxproj", "{020D0143-7ECD-4E05-8C04-DDB66F4AEEC4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{020D0143-7ECD-4E05-8C04-DDB66F4AEEC4}.Debug|x64.ActiveCfg = Debug|Win32
+		{020D0143-7ECD-4E05-8C04-DDB66F4AEEC4}.Debug|x64.Build.0 = Debug|Win32
+		{020D0143-7ECD-4E05-8C04-DDB66F4AEEC4}.Debug|x86.ActiveCfg = Debug|Win32
+		{020D0143-7ECD-4E05-8C04-DDB66F4AEEC4}.Debug|x86.Build.0 = Debug|Win32
+		{020D0143-7ECD-4E05-8C04-DDB66F4AEEC4}.Release|x64.ActiveCfg = Debug|Win32
+		{020D0143-7ECD-4E05-8C04-DDB66F4AEEC4}.Release|x64.Build.0 = Debug|Win32
+		{020D0143-7ECD-4E05-8C04-DDB66F4AEEC4}.Release|x86.ActiveCfg = Debug|Win32
+		{020D0143-7ECD-4E05-8C04-DDB66F4AEEC4}.Release|x86.Build.0 = Debug|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3828EE39-23DF-4F07-8A96-265F76E0001C}
+	EndGlobalSection
+EndGlobal

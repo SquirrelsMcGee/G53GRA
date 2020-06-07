@@ -33,11 +33,11 @@ void MyScene::Initialise()
 	Cube *cube = new Cube(this);
 	//AddObject(cube);
 
-	string filename = "rubber_duck";
+	string filename = "cottage";
 	ModelObject *modelObject = new ModelObject(this, filename, new Vertex(.3f, .3f, .4f), GL_CCW);
 	modelObject->setScale(new Vertex(10, 10, 10));
 	modelObject->setPosition(new Vertex(0, -100, 0));
-	modelObject->setOrientation(new Vertex(-90, 0, 0));
+	modelObject->setOrientation(new Vertex(0, 0, 0));
 	AddObject(modelObject);
 
 	FloorTile * temp;

@@ -1,0 +1,22 @@
+﻿Engine.obj : error LNK2019: unresolved external symbol __imp_glutInitWindowPosition referenced in function "public: virtual void __cdecl Engine::Run(void)" (?Run@Engine@@UEAAXXZ)
+Engine.obj : error LNK2019: unresolved external symbol __imp_glutInitWindowSize referenced in function "public: virtual void __cdecl Engine::Run(void)" (?Run@Engine@@UEAAXXZ)
+Engine.obj : error LNK2019: unresolved external symbol __imp_glutInitDisplayMode referenced in function "public: virtual void __cdecl Engine::Run(void)" (?Run@Engine@@UEAAXXZ)
+Engine.obj : error LNK2019: unresolved external symbol __imp_glutMainLoop referenced in function "public: virtual void __cdecl Engine::Run(void)" (?Run@Engine@@UEAAXXZ)
+Engine.obj : error LNK2019: unresolved external symbol __imp_glutPostRedisplay referenced in function "protected: static void __cdecl Engine::IdleFunc(void)" (?IdleFunc@Engine@@KAXXZ)
+Engine.obj : error LNK2019: unresolved external symbol __imp_glutSwapBuffers referenced in function "protected: static void __cdecl Engine::DrawFunc(void)" (?DrawFunc@Engine@@KAXXZ)
+Engine.obj : error LNK2019: unresolved external symbol __imp_glutIdleFunc referenced in function "public: virtual void __cdecl Engine::Run(void)" (?Run@Engine@@UEAAXXZ)
+Engine.obj : error LNK2019: unresolved external symbol __imp_glutKeyboardFunc referenced in function "public: virtual void __cdecl Engine::Run(void)" (?Run@Engine@@UEAAXXZ)
+Engine.obj : error LNK2019: unresolved external symbol __imp_glutSpecialFunc referenced in function "public: virtual void __cdecl Engine::Run(void)" (?Run@Engine@@UEAAXXZ)
+Engine.obj : error LNK2019: unresolved external symbol __imp_glutReshapeFunc referenced in function "public: virtual void __cdecl Engine::Run(void)" (?Run@Engine@@UEAAXXZ)
+Engine.obj : error LNK2019: unresolved external symbol __imp_glutDisplayFunc referenced in function "public: virtual void __cdecl Engine::Run(void)" (?Run@Engine@@UEAAXXZ)
+Engine.obj : error LNK2019: unresolved external symbol __imp_glutMouseFunc referenced in function "public: virtual void __cdecl Engine::Run(void)" (?Run@Engine@@UEAAXXZ)
+Engine.obj : error LNK2019: unresolved external symbol __imp_glutMotionFunc referenced in function "public: virtual void __cdecl Engine::Run(void)" (?Run@Engine@@UEAAXXZ)
+Engine.obj : error LNK2019: unresolved external symbol __imp_glutPassiveMotionFunc referenced in function "public: virtual void __cdecl Engine::Run(void)" (?Run@Engine@@UEAAXXZ)
+Engine.obj : error LNK2019: unresolved external symbol __imp_glutKeyboardUpFunc referenced in function "public: virtual void __cdecl Engine::Run(void)" (?Run@Engine@@UEAAXXZ)
+Engine.obj : error LNK2019: unresolved external symbol __imp_glutSpecialUpFunc referenced in function "public: virtual void __cdecl Engine::Run(void)" (?Run@Engine@@UEAAXXZ)
+Engine.obj : error LNK2019: unresolved external symbol __imp_glutGet referenced in function "protected: static void __cdecl Engine::IdleFunc(void)" (?IdleFunc@Engine@@KAXXZ)
+Engine.obj : error LNK2019: unresolved external symbol __imp___glutInitWithExit referenced in function glutInit_ATEXIT_HACK
+Engine.obj : error LNK2019: unresolved external symbol __imp___glutCreateWindowWithExit referenced in function glutCreateWindow_ATEXIT_HACK
+ModelObject.obj : error LNK2019: unresolved external symbol __imp_glutSolidSphere referenced in function "public: virtual void __cdecl ModelObject::Display(void)" (?Display@ModelObject@@UEAAXXZ)
+..\freeglut\lib\freeglut.lib : warning LNK4272: library machine type 'x86' conflicts with target machine type 'x64'
+E:\Git\G53GRA\gra_assignment1\x64\Debug\gra_assignment1.exe : fatal error LNK1120: 20 unresolved externals

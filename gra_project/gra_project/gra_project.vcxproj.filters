@@ -1,0 +1,183 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Framework">
+      <UniqueIdentifier>{09bf11f3-094d-4c73-bc55-d8d322bc6f52}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Framework\Engine">
+      <UniqueIdentifier>{390a5053-b08c-4645-942f-b624c340d2ae}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Framework\Interface">
+      <UniqueIdentifier>{947542f7-ae28-4b85-b739-2554d86c51cc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Framework\Utility">
+      <UniqueIdentifier>{f18877a6-69f6-4445-8344-d4ee3ad4c39c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Primitive Renderables">
+      <UniqueIdentifier>{b7a951d9-ae3f-4f13-857c-a7d88a7d5ea0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Complex Renderables">
+      <UniqueIdentifier>{047da42e-9b7b-4756-aba1-daa6dbd456a5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Primitive Renderables">
+      <UniqueIdentifier>{3176bb23-73b8-46c3-8187-d62b4c3f5b1b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Complex Renderables">
+      <UniqueIdentifier>{4c8385b3-8ae4-4944-9527-d4b2f6dca35a}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MyScene.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Framework\Engine\Engine.cpp">
+      <Filter>Framework\Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="Framework\Engine\Scene.cpp">
+      <Filter>Framework\Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="Framework\Utility\Camera.cpp">
+      <Filter>Framework\Utility</Filter>
+    </ClCompile>
+    <ClCompile Include="Framework\Utility\Texture.cpp">
+      <Filter>Framework\Utility</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjectFileReader.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CatObject.cpp">
+      <Filter>Source Files\Complex Renderables</Filter>
+    </ClCompile>
+    <ClCompile Include="ColorRGB.cpp">
+      <Filter>Source Files\Primitive Renderables</Filter>
+    </ClCompile>
+    <ClCompile Include="LightObject.cpp">
+      <Filter>Source Files\Complex Renderables</Filter>
+    </ClCompile>
+    <ClCompile Include="Face.cpp">
+      <Filter>Source Files\Primitive Renderables</Filter>
+    </ClCompile>
+    <ClCompile Include="ModelObject.cpp">
+      <Filter>Source Files\Complex Renderables</Filter>
+    </ClCompile>
+    <ClCompile Include="Quad.cpp">
+      <Filter>Source Files\Primitive Renderables</Filter>
+    </ClCompile>
+    <ClCompile Include="Skybox.cpp">
+      <Filter>Source Files\Complex Renderables</Filter>
+    </ClCompile>
+    <ClCompile Include="SquareObject.cpp">
+      <Filter>Source Files\Complex Renderables</Filter>
+    </ClCompile>
+    <ClCompile Include="Vertex.cpp">
+      <Filter>Source Files\Primitive Renderables</Filter>
+    </ClCompile>
+    <ClCompile Include="Triangle.cpp">
+      <Filter>Source Files\Primitive Renderables</Filter>
+    </ClCompile>
+    <ClCompile Include="WallObject.cpp">
+      <Filter>Source Files\Complex Renderables</Filter>
+    </ClCompile>
+    <ClCompile Include="WorldObject.cpp">
+      <Filter>Source Files\Complex Renderables</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerObject.cpp">
+      <Filter>Source Files\Complex Renderables</Filter>
+    </ClCompile>
+    <ClCompile Include="XInputController.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Functions.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MyScene.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Framework\Engine\Engine.h">
+      <Filter>Framework\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="Framework\Engine\Scene.h">
+      <Filter>Framework\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="Framework\Interface\Animation.h">
+      <Filter>Framework\Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="Framework\Interface\DisplayableObject.h">
+      <Filter>Framework\Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="Framework\Interface\Input.h">
+      <Filter>Framework\Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="Framework\Utility\Camera.h">
+      <Filter>Framework\Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="Framework\Utility\Texture.h">
+      <Filter>Framework\Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="Framework\Utility\VectorMath.h">
+      <Filter>Framework\Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjectFileReader.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Face.h">
+      <Filter>Header Files\Primitive Renderables</Filter>
+    </ClInclude>
+    <ClInclude Include="Quad.h">
+      <Filter>Header Files\Primitive Renderables</Filter>
+    </ClInclude>
+    <ClInclude Include="Triangle.h">
+      <Filter>Header Files\Primitive Renderables</Filter>
+    </ClInclude>
+    <ClInclude Include="Vertex.h">
+      <Filter>Header Files\Primitive Renderables</Filter>
+    </ClInclude>
+    <ClInclude Include="ColorRGB.h">
+      <Filter>Header Files\Primitive Renderables</Filter>
+    </ClInclude>
+    <ClInclude Include="CatObject.h">
+      <Filter>Header Files\Complex Renderables</Filter>
+    </ClInclude>
+    <ClInclude Include="LightObject.h">
+      <Filter>Header Files\Complex Renderables</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelObject.h">
+      <Filter>Header Files\Complex Renderables</Filter>
+    </ClInclude>
+    <ClInclude Include="Skybox.h">
+      <Filter>Header Files\Complex Renderables</Filter>
+    </ClInclude>
+    <ClInclude Include="SquareObject.h">
+      <Filter>Header Files\Complex Renderables</Filter>
+    </ClInclude>
+    <ClInclude Include="WallObject.h">
+      <Filter>Header Files\Complex Renderables</Filter>
+    </ClInclude>
+    <ClInclude Include="WorldObject.h">
+      <Filter>Header Files\Complex Renderables</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerObject.h">
+      <Filter>Header Files\Complex Renderables</Filter>
+    </ClInclude>
+    <ClInclude Include="XInputController.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

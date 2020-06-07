@@ -1,4 +1,12 @@
-﻿  ModelObject.cpp
+﻿  Cube.cpp
+  FloorTile.cpp
+  ModelObject.cpp
   MyScene.cpp
+e:\git\g53gra\gra_assignment1\gra_assignment1\myscene.cpp(48): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+e:\git\g53gra\gra_assignment1\gra_assignment1\myscene.cpp(49): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+  MySphere.cpp
+  Tetrahedron.cpp
+  WorldObject.cpp
+  main.cpp
   Generating Code...
-  gra_assignment1.vcxproj -> C:\Users\james\Documents\GitHub\G53GRA\gra_assignment1\Debug\gra_assignment1.exe
+  gra_assignment1.vcxproj -> E:\Git\G53GRA\gra_assignment1\Debug\gra_assignment1.exe

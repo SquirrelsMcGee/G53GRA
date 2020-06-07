@@ -1,0 +1,58 @@
+﻿  ColorRGB.cpp
+  Engine.cpp
+  Scene.cpp
+  Camera.cpp
+  Texture.cpp
+  main.cpp
+  MyScene.cpp
+  Quad.cpp
+e:\git\g53gra\gra_assignment2\gra_assignment2\quad.cpp(57): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+e:\git\g53gra\gra_assignment2\gra_assignment2\quad.cpp(61): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+e:\git\g53gra\gra_assignment2\gra_assignment2\quad.cpp(65): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+e:\git\g53gra\gra_assignment2\gra_assignment2\quad.cpp(69): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+  RobotObject.cpp
+e:\git\g53gra\gra_assignment2\gra_assignment2\robotobject.cpp(84): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+e:\git\g53gra\gra_assignment2\gra_assignment2\robotobject.cpp(90): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+e:\git\g53gra\gra_assignment2\gra_assignment2\robotobject.cpp(98): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+e:\git\g53gra\gra_assignment2\gra_assignment2\robotobject.cpp(103): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+e:\git\g53gra\gra_assignment2\gra_assignment2\robotobject.cpp(109): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+e:\git\g53gra\gra_assignment2\gra_assignment2\robotobject.cpp(294): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+e:\git\g53gra\gra_assignment2\gra_assignment2\robotobject.cpp(329): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+e:\git\g53gra\gra_assignment2\gra_assignment2\robotobject.cpp(338): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+e:\git\g53gra\gra_assignment2\gra_assignment2\robotobject.cpp(422): warning C4305: 'initializing': truncation from 'double' to 'float'
+e:\git\g53gra\gra_assignment2\gra_assignment2\robotobject.cpp(424): warning C4305: 'initializing': truncation from 'double' to 'float'
+e:\git\g53gra\gra_assignment2\gra_assignment2\robotobject.cpp(446): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+e:\git\g53gra\gra_assignment2\gra_assignment2\robotobject.cpp(454): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+  SquareObject.cpp
+  Triangle.cpp
+  Vertex.cpp
+  WallObject.cpp
+e:\git\g53gra\gra_assignment2\gra_assignment2\wallobject.cpp(66): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+e:\git\g53gra\gra_assignment2\gra_assignment2\wallobject.cpp(71): warning C4244: 'argument': conversion from 'double' to 'GLfloat', possible loss of data
+e:\git\g53gra\gra_assignment2\gra_assignment2\wallobject.cpp(73): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+  WorldObject.cpp
+  Generating Code...
+Engine.obj : error LNK2019: unresolved external symbol __imp_glutInitWindowPosition referenced in function "public: virtual void __cdecl Engine::Run(void)" (?Run@Engine@@UEAAXXZ)
+Engine.obj : error LNK2019: unresolved external symbol __imp_glutInitWindowSize referenced in function "public: virtual void __cdecl Engine::Run(void)" (?Run@Engine@@UEAAXXZ)
+Engine.obj : error LNK2019: unresolved external symbol __imp_glutInitDisplayMode referenced in function "public: virtual void __cdecl Engine::Run(void)" (?Run@Engine@@UEAAXXZ)
+Engine.obj : error LNK2019: unresolved external symbol __imp_glutMainLoop referenced in function "public: virtual void __cdecl Engine::Run(void)" (?Run@Engine@@UEAAXXZ)
+Engine.obj : error LNK2019: unresolved external symbol __imp_glutPostRedisplay referenced in function "protected: static void __cdecl Engine::IdleFunc(void)" (?IdleFunc@Engine@@KAXXZ)
+Engine.obj : error LNK2019: unresolved external symbol __imp_glutSwapBuffers referenced in function "protected: static void __cdecl Engine::DrawFunc(void)" (?DrawFunc@Engine@@KAXXZ)
+Engine.obj : error LNK2019: unresolved external symbol __imp_glutIdleFunc referenced in function "public: virtual void __cdecl Engine::Run(void)" (?Run@Engine@@UEAAXXZ)
+Engine.obj : error LNK2019: unresolved external symbol __imp_glutKeyboardFunc referenced in function "public: virtual void __cdecl Engine::Run(void)" (?Run@Engine@@UEAAXXZ)
+Engine.obj : error LNK2019: unresolved external symbol __imp_glutSpecialFunc referenced in function "public: virtual void __cdecl Engine::Run(void)" (?Run@Engine@@UEAAXXZ)
+Engine.obj : error LNK2019: unresolved external symbol __imp_glutReshapeFunc referenced in function "public: virtual void __cdecl Engine::Run(void)" (?Run@Engine@@UEAAXXZ)
+Engine.obj : error LNK2019: unresolved external symbol __imp_glutDisplayFunc referenced in function "public: virtual void __cdecl Engine::Run(void)" (?Run@Engine@@UEAAXXZ)
+Engine.obj : error LNK2019: unresolved external symbol __imp_glutMouseFunc referenced in function "public: virtual void __cdecl Engine::Run(void)" (?Run@Engine@@UEAAXXZ)
+Engine.obj : error LNK2019: unresolved external symbol __imp_glutMotionFunc referenced in function "public: virtual void __cdecl Engine::Run(void)" (?Run@Engine@@UEAAXXZ)
+Engine.obj : error LNK2019: unresolved external symbol __imp_glutPassiveMotionFunc referenced in function "public: virtual void __cdecl Engine::Run(void)" (?Run@Engine@@UEAAXXZ)
+Engine.obj : error LNK2019: unresolved external symbol __imp_glutKeyboardUpFunc referenced in function "public: virtual void __cdecl Engine::Run(void)" (?Run@Engine@@UEAAXXZ)
+Engine.obj : error LNK2019: unresolved external symbol __imp_glutSpecialUpFunc referenced in function "public: virtual void __cdecl Engine::Run(void)" (?Run@Engine@@UEAAXXZ)
+Engine.obj : error LNK2019: unresolved external symbol __imp_glutGet referenced in function "protected: static void __cdecl Engine::IdleFunc(void)" (?IdleFunc@Engine@@KAXXZ)
+Engine.obj : error LNK2019: unresolved external symbol __imp___glutInitWithExit referenced in function glutInit_ATEXIT_HACK
+Engine.obj : error LNK2019: unresolved external symbol __imp___glutCreateWindowWithExit referenced in function glutCreateWindow_ATEXIT_HACK
+RobotObject.obj : error LNK2019: unresolved external symbol __imp_glutSolidCube referenced in function "public: void __cdecl RobotObject::DrawArm(float,float,int)" (?DrawArm@RobotObject@@QEAAXMMH@Z)
+WallObject.obj : error LNK2001: unresolved external symbol __imp_glutSolidCube
+WallObject.obj : error LNK2019: unresolved external symbol __imp_glutSolidSphere referenced in function "public: virtual void __cdecl WallObject::Display(void)" (?Display@WallObject@@UEAAXXZ)
+..\freeglut\lib\freeglut.lib : warning LNK4272: library machine type 'x86' conflicts with target machine type 'x64'
+E:\Git\G53GRA\gra_assignment2\x64\Debug\gra_assignment2.exe : fatal error LNK1120: 21 unresolved externals
